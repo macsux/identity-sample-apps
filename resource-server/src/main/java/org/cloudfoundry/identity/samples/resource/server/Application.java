@@ -53,7 +53,7 @@ public class Application {
         return new ResourceServerConfigurerAdapter() {
             @Override
             public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-                resources.resourceId("todo");
+                resources.resourceId("todo2");
             }
 
             @Override

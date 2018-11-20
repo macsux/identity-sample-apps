@@ -18,14 +18,14 @@ public class TodoController {
 
 	@RequestMapping(method = GET)
 	@ResponseBody
-	@PreAuthorize("#oauth2.hasScope('todo.read')")
+	@PreAuthorize("#oauth2.hasScope('todo2.read')")
 	public Collection<Todo> list() {
 		return todoDB.values();
 	}
 
 	@RequestMapping(method = POST)
 	@ResponseBody
-	@PreAuthorize("#oauth2.hasScope('todo.write')")
+	@PreAuthorize("#oauth2.hasScope('todo2.write')")
 	public ResponseEntity<?> create(@RequestBody Todo body) {
 		String id = UUID.randomUUID().toString();
 		body.setId(id);
@@ -36,7 +36,7 @@ public class TodoController {
 	}
 
 	@RequestMapping(value = "/{todoId}", method = DELETE)
-	@PreAuthorize("#oauth2.hasScope('todo.write')")
+	@PreAuthorize("#oauth2.hasScope('todo2.write')")
 	public ResponseEntity<?> delete(@PathVariable String todoId) {
 		if (todoId == null || todoDB.get(todoId) == null) {
 			throw new HttpClientErrorException(NOT_FOUND, "Entry with id(" + todoId + ") not found.");

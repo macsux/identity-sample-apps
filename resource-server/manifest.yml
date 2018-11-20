@@ -1,6 +1,6 @@
 ---
 applications:
- - name: resource-server-sample
+ - name: resource-server-sample-andrew
    memory: 1G
    instances: 1
    buildpack: java_buildpack

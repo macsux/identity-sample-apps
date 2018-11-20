@@ -21,3 +21,7 @@ dependencies {
     compile 'io.pivotal.spring.cloud:spring-cloud-sso-connector:2.1.3.RELEASE'
     compile 'org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE'
 }
+compileJava {
+    sourceCompatibility = 8
+    targetCompatibility = 8
+}
